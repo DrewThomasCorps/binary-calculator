@@ -63,6 +63,7 @@ public class BinaryCalculatorController {
 
         System.out.println("clicked equals");
         //TODO Implement operation execution
+        binaryCalculator.calculate(firstBinaryDigit);
         clearOperator();
         clearDigits();
         resetStartState();
@@ -82,6 +83,7 @@ public class BinaryCalculatorController {
         clearDigits();
         clearOperator();
         resetStartState();
+        binaryCalculator.clear();
 
     }
 
@@ -90,6 +92,7 @@ public class BinaryCalculatorController {
         if (operator.isEmpty() && !firstBinaryDigit.isEmpty()) {
 
             System.out.println("clicked sqrt");
+            binaryCalculator.squareRoot(firstBinaryDigit);
             //TODO Implement square root operation
             clearOperator();
             clearDigits();
