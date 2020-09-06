@@ -4,6 +4,11 @@
 ## Installation
 ```git clone https://github.com/DrewThomasCorps/binary-calculator.git```
 
+Set up JAVA_HOME and install Maven Dependencies.
+
+To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run` 
+
+
 ## Meetings
 #### 09-05-2020 18:40–19:10
   Medium: Zoom

@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
 public class BinaryCalculatorController {
-    private BinaryCalculator binaryCalculator = new BinaryCalculator();
+    private final BinaryCalculator binaryCalculator = new BinaryCalculator();
 
     @FXML
     private Label resultDisplay;

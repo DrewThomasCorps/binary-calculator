@@ -47,16 +47,16 @@ public class BinaryCalculator {
 
     public StringBuilder calculate(String binary) {
         if (operation == null) {
-            throw new RuntimeException("No operation was selected");
+            throw new IllegalStateException("No operation was selected.");
         }
         if (firstNumber == null) {
-            throw new RuntimeException("The is not another number to operate with.");
+            throw new IllegalStateException("There is not another number to operate with.");
         }
         secondNumber = Long.parseLong(binary, 2);
         performCalculation();
         operation = null;
         secondNumber = null;
-        return new StringBuilder(firstNumber.toString());
+        return new StringBuilder(Long.toBinaryString(firstNumber));
     }
 
     public String convertToDecimal(String binary) {
@@ -67,6 +67,12 @@ public class BinaryCalculator {
     public StringBuilder convertToBinary(String binary) {
         // Todo Implement
         return new StringBuilder(binary);
+    }
+
+    public void clear() {
+        firstNumber = null;
+        secondNumber = null;
+        operation = null;
     }
 
     private void performCalculation() {
@@ -87,7 +93,7 @@ public class BinaryCalculator {
     }
 
     private void calculateAddition() {
-        // Check for overflow and throw exception
+        // Todo Check for overflow and throw exception
         firstNumber = firstNumber + secondNumber;
     }
 
