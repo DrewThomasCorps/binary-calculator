@@ -12,3 +12,10 @@
   
   Attendees: Levi, Alan, Drew
 
+#### 09-06-2020 12:32-13:30
+  Medium: Discord Call
+  
+  Discussion: Reconciliation of Maven project with preliminary JavaFX work
+  
+  Attendees: Drew, Alan
+
