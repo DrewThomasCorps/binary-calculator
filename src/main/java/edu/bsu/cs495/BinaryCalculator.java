@@ -1,3 +1,5 @@
+package edu.bsu.cs495;
+
 public class BinaryCalculator {
 
     private Long firstNumber;
@@ -12,9 +14,12 @@ public class BinaryCalculator {
     }
 
     public StringBuilder square(String binary) {
+        if (binary.equals("")) {
+            return new StringBuilder();
+        }
         firstNumber = Long.parseLong(binary, 2);
-        // TODO Implement
-        return new StringBuilder(firstNumber.toString());
+        firstNumber = (long) Math.pow(firstNumber, 2);
+        return new StringBuilder(Long.toBinaryString(firstNumber));
     }
 
     public StringBuilder squareRoot(String binary) {
