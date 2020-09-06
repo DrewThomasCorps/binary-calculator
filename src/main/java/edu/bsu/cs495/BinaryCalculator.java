@@ -92,15 +92,15 @@ public class BinaryCalculator {
     }
 
     private void calculateSubtraction() {
-
+        firstNumber -= secondNumber;
     }
 
     private void calculateDivision() {
-
+        firstNumber /= secondNumber;
     }
 
     private void calculateMultiplication() {
-
+        firstNumber *= secondNumber;
     }
 
 
