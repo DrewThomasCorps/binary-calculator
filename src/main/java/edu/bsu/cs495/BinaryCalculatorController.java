@@ -20,7 +20,7 @@ public class BinaryCalculatorController {
         String digitValue = ((Button)event.getSource()).getText();
 
         if (isInStartState) {
-            resultDisplay.setText("");
+            clearResultLabel();
             resultDisplay.setText(resultDisplay.getText() + digitValue);
             firstBinaryDigit = resultDisplay.getText();
             isInStartState = false;
@@ -41,7 +41,7 @@ public class BinaryCalculatorController {
 
     public void handleOperator(ActionEvent event) {
 
-        if (operator.isEmpty() && !firstBinaryDigit.isEmpty()) {
+        if (!isInStartState && secondBinaryDigit.isEmpty()) {
 
             clearResultLabel();
 
@@ -56,14 +56,12 @@ public class BinaryCalculatorController {
             System.out.println("I'm waiting for a digit");
 
         }
-
-        //TODO Decide how to handle an operator if equals has been pressed already. Reset state?
-        // Add to the currently displayed number?
     }
 
     public void handleEquals() {
 
         System.out.println("clicked equals");
+        //TODO Implement operation execution
         clearOperator();
         clearDigits();
         resetStartState();
@@ -73,6 +71,7 @@ public class BinaryCalculatorController {
     public void handleToggle() {
 
         System.out.println("clicked toggle");
+        //TODO Implement toggle
 
     }
 
@@ -90,6 +89,10 @@ public class BinaryCalculatorController {
         if (operator.isEmpty() && !firstBinaryDigit.isEmpty()) {
 
             System.out.println("clicked sqrt");
+            //TODO Implement square root operation
+            clearOperator();
+            clearDigits();
+            resetStartState();
 
         }
 
@@ -101,6 +104,10 @@ public class BinaryCalculatorController {
 
             System.out.println("clicked square");
             operator = "**";
+            //TODO Implement square operation
+            clearOperator();
+            clearDigits();
+            resetStartState();
 
         }
 
