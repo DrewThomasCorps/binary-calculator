@@ -2,6 +2,7 @@ package edu.bsu.cs495;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.ranges.RangeException;
 
 public class BinaryCalculatorTest {
 
@@ -22,5 +23,21 @@ public class BinaryCalculatorTest {
     @Test
     void testSquareReturnsEmptyStingBuilder_null() {
         Assertions.assertEquals("", binaryCalculator.square(null).toString());
+    }
+
+    @Test
+    void testCalculateAddition() {
+        binaryCalculator.add("1");
+        String actualSum = binaryCalculator.calculate("101").toString();
+        String expectedSum = "6";
+
+        Assertions.assertEquals(expectedSum, actualSum);
+    }
+
+    @Test
+    void testCalculateAdditionThrowsRangeError() {
+        binaryCalculator.add("111111111111111111111111111111111111111111111111111111111111111");
+
+        Assertions.assertThrows(RangeException.class, () -> binaryCalculator.calculate("1"));
     }
 }
