@@ -15,7 +15,12 @@ public class BinaryCalculatorTest {
     }
 
     @Test
-    void testReturnsEmptyStringBuilder() {
+    void testSquareReturnsEmptyStringBuilder_emptyString() {
         Assertions.assertEquals("", binaryCalculator.square("").toString());
+    }
+
+    @Test
+    void testSquareReturnsEmptyStingBuilder_null() {
+        Assertions.assertEquals("", binaryCalculator.square(null).toString());
     }
 }
