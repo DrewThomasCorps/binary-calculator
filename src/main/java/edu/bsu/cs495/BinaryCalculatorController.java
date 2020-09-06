@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
 public class BinaryCalculatorController {
+    private BinaryCalculator binaryCalculator = new BinaryCalculator();
 
     @FXML
     private Label resultDisplay;
@@ -102,9 +103,8 @@ public class BinaryCalculatorController {
 
         if (operator.isEmpty() && !firstBinaryDigit.isEmpty()) {
 
-            System.out.println("clicked square");
-            operator = "**";
-            //TODO Implement square operation
+            resultDisplay.setText((binaryCalculator.square(firstBinaryDigit)).toString());
+
             clearOperator();
             clearDigits();
             resetStartState();
