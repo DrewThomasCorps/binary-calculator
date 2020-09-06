@@ -41,4 +41,31 @@ public class BinaryCalculatorTest {
 
         Assertions.assertThrows(RangeException.class, () -> binaryCalculator.calculate("1"));
     }
+
+    @Test
+    void testCalculateSubtraction() {
+        binaryCalculator.subtract("101");
+        String actualDifference = binaryCalculator.calculate("1").toString();
+        String expectedDifference = "4";
+
+        Assertions.assertEquals(expectedDifference, actualDifference);
+    }
+
+    @Test
+    void testCalculateMultiplication() {
+        binaryCalculator.multiply("100");
+        String actualProduct = binaryCalculator.calculate("11").toString();
+        String expectedProduct = "12";
+
+        Assertions.assertEquals(expectedProduct, actualProduct);
+    }
+
+    @Test
+    void testCalculateDivision() {
+        binaryCalculator.divide("1100");
+        String actualQuotient = binaryCalculator.calculate("100").toString();
+        String expectedQuotient = "3";
+
+        Assertions.assertEquals(expectedQuotient, actualQuotient);
+    }
 }
