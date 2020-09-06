@@ -24,3 +24,9 @@ To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run`
   
   Attendees: Drew, Alan
 
+#### 09-06-2020 14:00-14:05
+  Medium: Zoom
+  
+  Discussion: Overview of what has been done, and what there is left to do.
+  
+  Attendees: Drew, Nathan
