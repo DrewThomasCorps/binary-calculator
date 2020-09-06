@@ -1,5 +1,7 @@
 package edu.bsu.cs495;
 
+import org.w3c.dom.ranges.RangeException;
+
 public class BinaryCalculator {
 
     private Long firstNumber;
@@ -86,8 +88,11 @@ public class BinaryCalculator {
         }
     }
 
-    private void calculateAddition() {
+    private void calculateAddition() throws RangeException {
         // Check for overflow and throw exception
+        if ((Long.MAX_VALUE - firstNumber) < secondNumber) {
+            throw new RangeException((short) 1, "Range Error: Sum is too large.");
+        }
         firstNumber = firstNumber + secondNumber;
     }
 
