@@ -36,8 +36,8 @@ public class BinaryCalculatorTest {
 
     @Test
     void testCalculateAdditionThrowsRangeError() {
-        String maxValStr = Long.toBinaryString(Long.MAX_VALUE);
-        binaryCalculator.add(maxValStr); //Long.MAX_VALUE
+        String maxVal = Long.toBinaryString(Long.MAX_VALUE);
+        binaryCalculator.add(maxVal); //Long.MAX_VALUE
 
         Assertions.assertThrows(RangeException.class, () -> binaryCalculator.calculate("1"));
     }
