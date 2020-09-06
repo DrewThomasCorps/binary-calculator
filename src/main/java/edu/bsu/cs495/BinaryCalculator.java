@@ -14,7 +14,7 @@ public class BinaryCalculator {
     }
 
     public StringBuilder square(String binary) {
-        if (binary.equals("")) {
+        if (binary == null || binary.equals("")) {
             return new StringBuilder();
         }
         firstNumber = Long.parseLong(binary, 2);
