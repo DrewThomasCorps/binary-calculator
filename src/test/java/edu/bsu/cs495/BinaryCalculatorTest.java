@@ -36,7 +36,7 @@ public class BinaryCalculatorTest {
 
     @Test
     void testCalculateAdditionThrowsRangeError() {
-        binaryCalculator.add("111111111111111111111111111111111111111111111111111111111111111");
+        binaryCalculator.add("111111111111111111111111111111111111111111111111111111111111111"); //Long.MAX_VALUE
 
         Assertions.assertThrows(RangeException.class, () -> binaryCalculator.calculate("1"));
     }

@@ -36,15 +36,18 @@ public class BinaryCalculator {
     }
 
     public void subtract(String binary) {
-
+        firstNumber = Long.parseLong(binary, 2);
+        operation = TwoNumberOperations.SUBTRACT;
     }
 
     public void multiply(String binary) {
-
+        firstNumber = Long.parseLong(binary, 2);
+        operation = TwoNumberOperations.MULTIPLY;
     }
 
     public void divide(String binary) {
-
+        firstNumber = Long.parseLong(binary, 2);
+        operation = TwoNumberOperations.DIVIDE;
     }
 
     public StringBuilder calculate(String binary) {
