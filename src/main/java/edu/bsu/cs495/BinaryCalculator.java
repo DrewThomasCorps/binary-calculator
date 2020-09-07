@@ -64,6 +64,12 @@ public class BinaryCalculator {
         return new StringBuilder(firstNumber.toString());
     }
 
+    public void clear() {
+        firstNumber = null;
+        secondNumber = null;
+        operation = null;
+    }
+
     public String convertToDecimal(String binary) {
         // Todo Implement
         return binary;
