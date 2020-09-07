@@ -16,6 +16,21 @@ public class BinaryCalculatorTest {
     }
 
     @Test
+    void testSquareThrowsExceptionOnOverflow() {
+        Assertions.assertThrows(ArithmeticException.class,
+                () -> binaryCalculator.square(Long.toBinaryString(Long.MAX_VALUE/2))
+        );
+    }
+
+    @Test
+    void testSquareHandlesNegatives() {
+        Assertions.assertEquals(
+                Long.toBinaryString(25),
+                binaryCalculator.square(Long.toBinaryString(-5)).toString()
+        );
+    }
+
+    @Test
     void testSquareReturnsEmptyStringBuilder_emptyString() {
         Assertions.assertEquals("", binaryCalculator.square("").toString());
     }
@@ -31,6 +46,14 @@ public class BinaryCalculatorTest {
         String actualSum = binaryCalculator.calculate("101").toString();
         String expectedSum = Long.toBinaryString(6);
 
+        Assertions.assertEquals(expectedSum, actualSum);
+    }
+
+    @Test
+    void testCalculateAdditionWithNegatives() {
+        binaryCalculator.add(Long.toBinaryString(-3));
+        String actualSum = binaryCalculator.calculate(Long.toBinaryString(2)).toString();
+        String expectedSum = Long.toBinaryString(-1);
         Assertions.assertEquals(expectedSum, actualSum);
     }
 

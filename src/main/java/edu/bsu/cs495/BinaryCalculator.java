@@ -2,6 +2,8 @@ package edu.bsu.cs495;
 
 import org.w3c.dom.ranges.RangeException;
 
+import java.math.BigInteger;
+
 public class BinaryCalculator {
 
     private Long firstNumber;
@@ -19,45 +21,49 @@ public class BinaryCalculator {
         if (binary == null || binary.equals("")) {
             return new StringBuilder();
         }
-        firstNumber = Long.parseLong(binary, 2);
-        firstNumber = (long) Math.pow(firstNumber, 2);
+        firstNumber = new BigInteger(binary, 2).longValue();
+        double squaredValue = Math.pow(firstNumber, 2);
+        if (squaredValue > Long.MAX_VALUE) {
+            throw new ArithmeticException("Long overflow");
+        }
+        firstNumber = (long) squaredValue;
         return new StringBuilder(Long.toBinaryString(firstNumber));
     }
 
     public StringBuilder squareRoot(String binary) {
-        firstNumber = Long.parseLong(binary, 2);
+        firstNumber = new BigInteger(binary, 2).longValue();
         // TODO Implement
         return new StringBuilder(firstNumber.toString());
     }
 
     public void add(String binary) {
-        firstNumber = Long.parseLong(binary, 2);
+        firstNumber = new BigInteger(binary, 2).longValue();
         operation = TwoNumberOperations.ADD;
     }
 
     public void subtract(String binary) {
-        firstNumber = Long.parseLong(binary, 2);
+        firstNumber = new BigInteger(binary, 2).longValue();
         operation = TwoNumberOperations.SUBTRACT;
     }
 
     public void multiply(String binary) {
-        firstNumber = Long.parseLong(binary, 2);
+        firstNumber = new BigInteger(binary, 2).longValue();
         operation = TwoNumberOperations.MULTIPLY;
     }
 
     public void divide(String binary) {
-        firstNumber = Long.parseLong(binary, 2);
+        firstNumber = new BigInteger(binary, 2).longValue();
         operation = TwoNumberOperations.DIVIDE;
     }
 
     public StringBuilder calculate(String binary) {
         if (operation == null) {
-            throw new RuntimeException("No operation was selected");
+            throw new IllegalStateException("No operation was selected");
         }
         if (firstNumber == null) {
-            throw new RuntimeException("The is not another number to operate with.");
+            throw new IllegalStateException("The is not another number to operate with.");
         }
-        secondNumber = Long.parseLong(binary, 2);
+        secondNumber = new BigInteger(binary, 2).longValue();
         performCalculation();
         operation = null;
         secondNumber = null;
