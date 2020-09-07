@@ -79,7 +79,12 @@
                   <Font name="Arial Bold" size="17.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleEquals" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="=" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#handleSignToggle" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="+/-" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleEquals" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="=" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>

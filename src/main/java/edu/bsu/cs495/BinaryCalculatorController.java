@@ -77,6 +77,10 @@ public class BinaryCalculatorController {
 
     }
 
+    public void handleSignToggle() {
+
+    }
+
     public void handleClear() {
 
         clearResultLabel();
