@@ -31,6 +31,22 @@ public class BinaryCalculatorTest {
     }
 
     @Test
+    void testSquareRoot() {
+        Assertions.assertEquals(
+                Long.toBinaryString(6),
+                binaryCalculator.squareRoot(Long.toBinaryString(36)).toString()
+        );
+    }
+
+    @Test
+    void testSquareRootCastsToInt() {
+        Assertions.assertEquals(
+                Long.toBinaryString(4),
+                binaryCalculator.squareRoot(Long.toBinaryString(18)).toString()
+        );
+    }
+
+    @Test
     void testSquareReturnsEmptyStringBuilder_emptyString() {
         Assertions.assertEquals("", binaryCalculator.square("").toString());
     }

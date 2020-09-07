@@ -32,8 +32,8 @@ public class BinaryCalculator {
 
     public StringBuilder squareRoot(String binary) {
         firstNumber = new BigInteger(binary, 2).longValue();
-        // TODO Implement
-        return new StringBuilder(firstNumber.toString());
+        firstNumber = (long) Math.sqrt((double) firstNumber);
+        return new StringBuilder(Long.toBinaryString(firstNumber));
     }
 
     public void add(String binary) {
