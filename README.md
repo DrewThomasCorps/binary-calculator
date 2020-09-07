@@ -16,6 +16,7 @@ To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run`
   Discussion: Review of Requirements and quick assignments (will need to discuss with others later)
   
   Attendees: Levi, Alan, Drew
+<hr>
 
 #### 09-06-2020 12:32-13:30
   Medium: Discord Call
@@ -23,6 +24,7 @@ To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run`
   Discussion: Reconciliation of Maven project with preliminary JavaFX work
   
   Attendees: Drew, Alan
+<hr>
 
 #### 09-06-2020 14:00-14:05
   Medium: Zoom
@@ -30,3 +32,11 @@ To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run`
   Discussion: Overview of what has been done, and what there is left to do.
   
   Attendees: Drew, Nathan
+  <hr>
+  
+#### 09-07-2020 13:00-14:00
+  Medium: Zoom
+  
+  Discussion: Project structure and next steps. Getting set up on local machines.
+  
+  Attendees: Drew, Alan, Nathan, Samuel, Levi

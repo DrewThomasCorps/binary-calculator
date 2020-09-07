@@ -29,7 +29,7 @@ public class BinaryCalculatorTest {
     void testCalculateAddition() {
         binaryCalculator.add("1");
         String actualSum = binaryCalculator.calculate("101").toString();
-        String expectedSum = "6";
+        String expectedSum = Long.toBinaryString(6);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
@@ -46,7 +46,7 @@ public class BinaryCalculatorTest {
     void testCalculateSubtraction() {
         binaryCalculator.subtract("101");
         String actualDifference = binaryCalculator.calculate("1").toString();
-        String expectedDifference = "4";
+        String expectedDifference = Long.toBinaryString(4);
 
         Assertions.assertEquals(expectedDifference, actualDifference);
     }
@@ -55,7 +55,7 @@ public class BinaryCalculatorTest {
     void testCalculateMultiplication() {
         binaryCalculator.multiply("100");
         String actualProduct = binaryCalculator.calculate("11").toString();
-        String expectedProduct = "12";
+        String expectedProduct = Long.toBinaryString(12);
 
         Assertions.assertEquals(expectedProduct, actualProduct);
     }
@@ -71,7 +71,7 @@ public class BinaryCalculatorTest {
     void testCalculateDivision() {
         binaryCalculator.divide("1100");
         String actualQuotient = binaryCalculator.calculate("100").toString();
-        String expectedQuotient = "3";
+        String expectedQuotient = Long.toBinaryString(3);
 
         Assertions.assertEquals(expectedQuotient, actualQuotient);
     }
