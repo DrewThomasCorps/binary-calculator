@@ -35,11 +35,11 @@ public class BinaryCalculatorTest {
     }
 
     @Test
-    void testCalculateAdditionThrowsRangeError() {
+    void testCalculateAdditionThrowsArithmeticException() {
         String maxVal = Long.toBinaryString(Long.MAX_VALUE);
         binaryCalculator.add(maxVal); //Long.MAX_VALUE
 
-        Assertions.assertThrows(RangeException.class, () -> binaryCalculator.calculate("1"));
+        Assertions.assertThrows(ArithmeticException.class, () -> binaryCalculator.calculate("1"));
     }
 
     @Test
@@ -58,6 +58,13 @@ public class BinaryCalculatorTest {
         String expectedProduct = "12";
 
         Assertions.assertEquals(expectedProduct, actualProduct);
+    }
+
+    @Test
+    void testCalculateMultiplicationThrowsArithmeticException() {
+        binaryCalculator.multiply(Long.toBinaryString(Long.MAX_VALUE));
+
+        Assertions.assertThrows(ArithmeticException.class, () -> binaryCalculator.calculate("10"));
     }
 
     @Test

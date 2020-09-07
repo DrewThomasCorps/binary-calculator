@@ -91,24 +91,20 @@ public class BinaryCalculator {
         }
     }
 
-    private void calculateAddition() throws RangeException {
-        // Check for overflow and throw exception
-        if ((Long.MAX_VALUE - firstNumber) < secondNumber) {
-            throw new RangeException((short) 1, "Range Error: Sum is too large.");
-        }
-        firstNumber = firstNumber + secondNumber;
+    private void calculateAddition() throws ArithmeticException {
+        firstNumber = Math.addExact(firstNumber, secondNumber);
     }
 
-    private void calculateSubtraction() {
-        firstNumber -= secondNumber;
+    private void calculateSubtraction() throws ArithmeticException {
+        firstNumber = Math.subtractExact(firstNumber, secondNumber);
     }
 
     private void calculateDivision() {
         firstNumber /= secondNumber;
     }
 
-    private void calculateMultiplication() {
-        firstNumber *= secondNumber;
+    private void calculateMultiplication() throws ArithmeticException {
+        firstNumber = Math.multiplyExact(firstNumber, secondNumber);
     }
 
 
