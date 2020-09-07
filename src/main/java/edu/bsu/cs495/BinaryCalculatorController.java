@@ -11,6 +11,9 @@ public class BinaryCalculatorController {
     @FXML
     private Label resultDisplay;
 
+    @FXML
+    private Label alertDisplay;
+
     public void handleDigit(ActionEvent event) {
 
         if (resultDisplay.getText().length() < 64) {
@@ -58,6 +61,10 @@ public class BinaryCalculatorController {
     public void clearResultLabel(){
 
         resultDisplay.setText("");
+
+    }
+
+    public void setAlert() {
 
     }
 

@@ -9,82 +9,87 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs495.BinaryCalculatorController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs495.BinaryCalculatorController">
    <children>
-      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
+      <Label fx:id="alertDisplay" alignment="BASELINE_LEFT" prefHeight="80.0" prefWidth="500.0" textFill="#d10067" wrapText="true">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label fx:id="resultDisplay" alignment="BASELINE_RIGHT" prefHeight="54.0" prefWidth="338.0" textFill="#333333">
+            <Label fx:id="resultDisplay" alignment="BASELINE_RIGHT" prefHeight="80.0" prefWidth="480.0" textAlignment="RIGHT" textFill="#333333" wrapText="true">
                <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font name="Arial" size="12.0" />
                </font>
             </Label>
          </children></StackPane>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="400.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="125.0" prefWidth="500.0">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleSquare" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #00d4d2; -fx-border-color: #ffffff;" styleClass="btn" text="^2" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleSquare" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #00d4d2; -fx-border-color: #ffffff;" styleClass="btn" text="^2" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleSquareRoot" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #00d4d2; -fx-border-color: #ffffff;" styleClass="btn" text="SQRT" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleSquareRoot" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #00d4d2; -fx-border-color: #ffffff;" styleClass="btn" text="SQRT" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="17.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleOperator" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #6213ff; -fx-border-color: #ffffff;" styleClass="btn" text="*" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleOperator" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #6213ff; -fx-border-color: #ffffff;" styleClass="btn" text="*" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleOperator" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #6213ff; -fx-border-color: #ffffff;" styleClass="btn" text="/" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleOperator" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #6213ff; -fx-border-color: #ffffff;" styleClass="btn" text="/" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>
             </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="400.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="125.0" prefWidth="500.0">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleDigit" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #333333; -fx-border-color: #ffffff;" styleClass="btn" text="0" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleDigit" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #333333; -fx-border-color: #ffffff;" styleClass="btn" text="0" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleDigit" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #333333; -fx-border-color: #ffffff;" styleClass="btn" text="1" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleDigit" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #333333; -fx-border-color: #ffffff;" styleClass="btn" text="1" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleOperator" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #6213ff; -fx-border-color: #ffffff;" styleClass="btn" text="+" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleOperator" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #6213ff; -fx-border-color: #ffffff;" styleClass="btn" text="+" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleOperator" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #6213ff; -fx-border-color: #ffffff;" styleClass="btn" text="-" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleOperator" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #6213ff; -fx-border-color: #ffffff;" styleClass="btn" text="-" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>
             </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="400.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="125.0" prefWidth="500.0">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleToggle" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="TGL" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleToggle" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="TGL" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="17.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleClear" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="CLEAR" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleClear" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="CLEAR" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="17.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#handleSignToggle" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="+/-" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#handleSignToggle" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="+/-" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="30.0" />
                </font>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleEquals" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="=" textFill="WHITE">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleEquals" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #d10067; -fx-border-color: #ffffff;" styleClass="btn" text="=" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="34.0" />
                </font>
