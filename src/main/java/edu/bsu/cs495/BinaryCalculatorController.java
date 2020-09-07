@@ -18,24 +18,10 @@ public class BinaryCalculatorController {
 
     public void handleDigit(ActionEvent event) {
 
-        String digitValue = ((Button)event.getSource()).getText();
-
-        if (isInStartState) {
-            clearResultLabel();
+        if (resultDisplay.getText().length() < 64) {
+            String digitValue = ((Button)event.getSource()).getText();
             resultDisplay.setText(resultDisplay.getText() + digitValue);
-            firstBinaryDigit = resultDisplay.getText();
             isInStartState = false;
-
-        } else if (operator.isEmpty()) {
-
-            resultDisplay.setText(resultDisplay.getText() + digitValue);
-            firstBinaryDigit = resultDisplay.getText();
-
-        } else {
-
-            resultDisplay.setText(resultDisplay.getText() + digitValue);
-            secondBinaryDigit = resultDisplay.getText();
-
         }
 
     }
