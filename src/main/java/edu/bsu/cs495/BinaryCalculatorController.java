@@ -24,7 +24,23 @@ public class BinaryCalculatorController {
     }
 
     public void handleOperator(ActionEvent event) {
-
+        String operator = ((Button)event.getSource()).getText();
+        switch (operator) {
+            case "+":
+                //TODO: Addition
+                break;
+            case "-":
+                //TODO: Subtraction
+                break;
+            case "/":
+                //TODO: Division
+                break;
+            case "*":
+                //TODO: Multiplication
+                break;
+            default:
+                setAlert();
+        }
     }
 
     public void handleEquals() {
