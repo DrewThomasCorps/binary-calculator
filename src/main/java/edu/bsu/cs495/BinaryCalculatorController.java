@@ -5,6 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class BinaryCalculatorController {
     private final BinaryCalculator binaryCalculator = new BinaryCalculator();
 
@@ -15,6 +20,13 @@ public class BinaryCalculatorController {
     private Label alertDisplay;
 
     public void handleDigit(ActionEvent event) {
+
+        Pattern p = Pattern.compile("[+-/*]");
+        Matcher m = p.matcher(resultDisplay.getText());
+
+        if (m.matches()) {
+            clearResultLabel();
+        }
 
         if (resultDisplay.getText().length() < 64) {
             String digitValue = ((Button)event.getSource()).getText();
@@ -28,15 +40,19 @@ public class BinaryCalculatorController {
         switch (operator) {
             case "+":
                 binaryCalculator.add(resultDisplay.getText());
+                resultDisplay.setText(operator);
                 break;
             case "-":
                 binaryCalculator.subtract(resultDisplay.getText());
+                resultDisplay.setText(operator);
                 break;
             case "/":
                 binaryCalculator.divide(resultDisplay.getText());
+                resultDisplay.setText(operator);
                 break;
             case "*":
                 binaryCalculator.multiply(resultDisplay.getText());
+                resultDisplay.setText(operator);
                 break;
             default:
                 setAlert();
