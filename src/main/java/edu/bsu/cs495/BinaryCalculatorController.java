@@ -27,16 +27,16 @@ public class BinaryCalculatorController {
         String operator = ((Button)event.getSource()).getText();
         switch (operator) {
             case "+":
-                //TODO: Addition
+                binaryCalculator.add(resultDisplay.getText());
                 break;
             case "-":
-                //TODO: Subtraction
+                binaryCalculator.subtract(resultDisplay.getText());
                 break;
             case "/":
-                //TODO: Division
+                binaryCalculator.divide(resultDisplay.getText());
                 break;
             case "*":
-                //TODO: Multiplication
+                binaryCalculator.multiply(resultDisplay.getText());
                 break;
             default:
                 setAlert();
