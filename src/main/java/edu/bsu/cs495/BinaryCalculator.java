@@ -61,7 +61,7 @@ public class BinaryCalculator {
         performCalculation();
         operation = null;
         secondNumber = null;
-        return new StringBuilder(firstNumber.toString());
+        return new StringBuilder(Long.toBinaryString(firstNumber));
     }
 
     public void clear() {

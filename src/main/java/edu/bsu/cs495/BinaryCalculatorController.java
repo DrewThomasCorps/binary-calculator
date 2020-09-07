@@ -93,7 +93,7 @@ public class BinaryCalculatorController {
     }
 
     public void handleSquare() {
-
+        /*
         if (operator.isEmpty() && !firstBinaryDigit.isEmpty()) {
 
             resultDisplay.setText((binaryCalculator.square(firstBinaryDigit)).toString());
@@ -103,7 +103,8 @@ public class BinaryCalculatorController {
             resetStartState();
 
         }
-
+        */
+        resultDisplay.setText((binaryCalculator.square(resultDisplay.getText())).toString());
     }
 
     public void clearResultLabel(){
