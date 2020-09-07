@@ -40,3 +40,12 @@ To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run`
   Discussion: Project structure and next steps. Getting set up on local machines.
   
   Attendees: Drew, Alan, Nathan, Samuel, Levi
+  <hr>
+  
+#### 09-07-2020 15:00-15:20
+  Medium: Slack Call
+  
+  Discussion: How is the functionality implemented, and how should it be handled in the controller.
+  
+  Attendees: Drew, Levi
+  
