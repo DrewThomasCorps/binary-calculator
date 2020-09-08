@@ -68,10 +68,10 @@ public class BinaryCalculatorController {
     public void handleToggle() {
         String text = resultDisplay.getText();
         if (isbinary) {
-            BigInteger number = new BigInteger(text, 2);
-            resultDisplay.setText(number.toString());
+            long number = Long.parseUnsignedLong(text, 2);
+            resultDisplay.setText(Long.toString(number));
         } else {
-            long number = new BigInteger(text, 10).longValue();
+            long number = Long.parseLong(text);
             resultDisplay.setText(Long.toBinaryString(number));
         }
         isbinary = !isbinary;
