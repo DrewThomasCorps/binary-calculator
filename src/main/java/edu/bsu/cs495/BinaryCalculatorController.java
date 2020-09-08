@@ -37,6 +37,11 @@ public class BinaryCalculatorController {
     public void handleOperator(ActionEvent event) {
         stateReset();
 
+        if (isEmpty()) {
+            setAlert("Operation not permitted: No input");
+            return;
+        }
+
         String operator = ((Button)event.getSource()).getText();
 
         switch (operator) {
@@ -62,6 +67,11 @@ public class BinaryCalculatorController {
     }
 
     public void handleEquals() {
+        if (isEmpty()) {
+            setAlert("Operation not permitted: No input");
+            return;
+        }
+
         try {
             resultDisplay.setText(binaryCalculator.calculate(resultDisplay.getText()).toString());
         } catch (ArithmeticException e) {
@@ -72,6 +82,12 @@ public class BinaryCalculatorController {
 
     public void handleToggle() {
         String text = resultDisplay.getText();
+
+        if (isEmpty()) {
+            setAlert("Operation not permitted: No input");
+            return;
+        }
+
         if (isBinary) {
             resultDisplay.setText(binaryCalculator.convertToDecimal(text));
         } else {
@@ -82,6 +98,11 @@ public class BinaryCalculatorController {
 
     public void handleSignToggle() {
         stateReset();
+
+        if (isEmpty()) {
+            setAlert("Operation not permitted: No input");
+            return;
+        }
 
         try {
             resultDisplay.setText(binaryCalculator.toggleSign(resultDisplay.getText()));
@@ -101,7 +122,7 @@ public class BinaryCalculatorController {
     public void handleSquareRoot() {
         stateReset();
 
-        if (resultDisplay.getText().equals("")) {
+        if (isEmpty()) {
             setAlert("Operation not permitted: No input");
         } else {
             resultDisplay.setText((binaryCalculator.squareRoot(resultDisplay.getText())).toString());
@@ -110,6 +131,11 @@ public class BinaryCalculatorController {
 
     public void handleSquare() {
         stateReset();
+
+        if (isEmpty()) {
+            setAlert("Operation not permitted: No input");
+            return;
+        }
 
         try {
             resultDisplay.setText((binaryCalculator.square(resultDisplay.getText())).toString());
@@ -140,6 +166,10 @@ public class BinaryCalculatorController {
     public void stateReset() {
         preEventToggle();
         clearAlert();
+    }
+
+    public boolean isEmpty() {
+        return resultDisplay.getText().equals("");
     }
 
 }
