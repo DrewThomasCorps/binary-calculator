@@ -19,6 +19,7 @@ public class BinaryCalculatorController {
     private Label alertDisplay;
 
     public void handleDigit(ActionEvent event) {
+        clearAlert();
         Pattern p = Pattern.compile("[+-/*]");
         Matcher m = p.matcher(resultDisplay.getText());
 
@@ -33,6 +34,7 @@ public class BinaryCalculatorController {
     }
 
     public void handleOperator(ActionEvent event) {
+        clearAlert();
         String operator = ((Button)event.getSource()).getText();
         switch (operator) {
             case "+":
@@ -57,7 +59,12 @@ public class BinaryCalculatorController {
     }
 
     public void handleEquals() {
-        resultDisplay.setText(binaryCalculator.calculate(resultDisplay.getText()).toString());
+        try {
+            resultDisplay.setText(binaryCalculator.calculate(resultDisplay.getText()).toString());
+        } catch (ArithmeticException e) {
+            setAlert("Operation not permitted: "+ e.getMessage());
+        }
+
     }
 
     public void handleToggle() {
@@ -75,16 +82,23 @@ public class BinaryCalculatorController {
     }
 
     public void handleClear() {
+        clearAlert();
         clearResultLabel();
         binaryCalculator.clear();
     }
 
     public void handleSquareRoot() {
+        clearAlert();
         resultDisplay.setText((binaryCalculator.squareRoot(resultDisplay.getText())).toString());
     }
 
     public void handleSquare() {
-        resultDisplay.setText((binaryCalculator.square(resultDisplay.getText())).toString());
+        try {
+            resultDisplay.setText((binaryCalculator.square(resultDisplay.getText())).toString());
+        } catch (ArithmeticException e) {
+            setAlert("Operation not permitted: " + e.getMessage());
+        }
+
     }
 
     public void clearResultLabel(){
@@ -93,6 +107,10 @@ public class BinaryCalculatorController {
 
     public void setAlert(String alertText) {
         alertDisplay.setText(alertText);
+    }
+
+    public void clearAlert() {
+        alertDisplay.setText("");
     }
 
 }

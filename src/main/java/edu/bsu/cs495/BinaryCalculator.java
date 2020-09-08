@@ -15,7 +15,7 @@ public class BinaryCalculator {
         DIVIDE,
     }
 
-    public StringBuilder square(String binary) {
+    public StringBuilder square(String binary) throws ArithmeticException {
         if (binary == null || binary.equals("")) {
             return new StringBuilder();
         }
