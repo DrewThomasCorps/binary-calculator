@@ -57,7 +57,7 @@ public class BinaryCalculatorController {
     }
 
     public void handleEquals() {
-
+        resultDisplay.setText(binaryCalculator.calculate(resultDisplay.getText()).toString());
     }
 
     public void handleToggle() {
@@ -74,7 +74,7 @@ public class BinaryCalculatorController {
 
     public void handleSignToggle() {
         long inputNumber = Long.parseUnsignedLong(resultDisplay.getText(),2);
-        inputNumber = inputNumber* -1;
+        inputNumber = Math.negateExact(inputNumber);
         String outputNumber = Long.toBinaryString(inputNumber);
         resultDisplay.setText(outputNumber);
     }
