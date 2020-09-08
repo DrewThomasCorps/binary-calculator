@@ -5,12 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BinaryCalculatorController {
+    private Boolean isbinary = true;
     private final BinaryCalculator binaryCalculator = new BinaryCalculator();
 
     @FXML
@@ -64,10 +66,23 @@ public class BinaryCalculatorController {
     }
 
     public void handleToggle() {
-
+        String text = resultDisplay.getText();
+        if (isbinary) {
+            BigInteger number = new BigInteger(text, 2);
+            resultDisplay.setText(number.toString());
+        } else {
+            long number = new BigInteger(text, 10).longValue();
+            resultDisplay.setText(Long.toBinaryString(number));
+        }
+        isbinary = !isbinary;
     }
 
     public void handleSignToggle() {
+        long Num = Long.parseUnsignedLong(resultDisplay.getText(),2);
+        Num = Num* -1;
+        String outNum = Long.toBinaryString(Num);
+        resultDisplay.setText(outNum);
+
 
     }
 

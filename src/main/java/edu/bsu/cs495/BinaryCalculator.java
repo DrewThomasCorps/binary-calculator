@@ -77,13 +77,15 @@ public class BinaryCalculator {
     }
 
     public String convertToDecimal(String binary) {
-        // Todo Implement
-        return binary;
+        long number = new BigInteger(binary, 10).longValue();
+        String outnumber = Long.toString(number);
+        return outnumber ;
     }
 
-    public StringBuilder convertToBinary(String binary) {
-        // Todo Implement
-        return new StringBuilder(binary);
+    public String convertToBinary(String binary) {
+        BigInteger number = new BigInteger(binary, 2);
+        String outnumber = number.toString();
+        return outnumber;
     }
 
     private void performCalculation() {
