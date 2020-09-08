@@ -19,7 +19,8 @@ public class BinaryCalculatorController {
     private Label alertDisplay;
 
     public void handleDigit(ActionEvent event) {
-        clearAlert();
+        stateReset();
+
         Pattern p = Pattern.compile("[+-/*]");
         Matcher m = p.matcher(resultDisplay.getText());
 
@@ -34,8 +35,10 @@ public class BinaryCalculatorController {
     }
 
     public void handleOperator(ActionEvent event) {
-        clearAlert();
+        stateReset();
+
         String operator = ((Button)event.getSource()).getText();
+
         switch (operator) {
             case "+":
                 binaryCalculator.add(resultDisplay.getText());
@@ -78,6 +81,8 @@ public class BinaryCalculatorController {
     }
 
     public void handleSignToggle() {
+        stateReset();
+
         try {
             resultDisplay.setText(binaryCalculator.toggleSign(resultDisplay.getText()));
         } catch (ArithmeticException e) {
@@ -87,17 +92,21 @@ public class BinaryCalculatorController {
     }
 
     public void handleClear() {
-        clearAlert();
+        stateReset();
         clearResultLabel();
+
         binaryCalculator.clear();
     }
 
     public void handleSquareRoot() {
-        clearAlert();
+        stateReset();
+
         resultDisplay.setText((binaryCalculator.squareRoot(resultDisplay.getText())).toString());
     }
 
     public void handleSquare() {
+        stateReset();
+
         try {
             resultDisplay.setText((binaryCalculator.square(resultDisplay.getText())).toString());
         } catch (ArithmeticException e) {
@@ -116,6 +125,17 @@ public class BinaryCalculatorController {
 
     public void clearAlert() {
         alertDisplay.setText("");
+    }
+
+    public void preEventToggle() {
+        if (!isBinary) {
+            handleToggle();
+        }
+    }
+
+    public void stateReset() {
+        preEventToggle();
+        clearAlert();
     }
 
 }
