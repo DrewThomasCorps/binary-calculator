@@ -79,7 +79,7 @@ public class BinaryCalculatorController {
             isResult = true;
         } catch (ArithmeticException e) {
             setAlert("Operation not permitted: "+ e.getMessage());
-        }
+        } catch (Exception ignored) { }
 
     }
 
