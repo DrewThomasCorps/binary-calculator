@@ -2,7 +2,6 @@ package edu.bsu.cs495;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.w3c.dom.ranges.RangeException;
 
 public class BinaryCalculatorTest {
 
@@ -18,7 +17,7 @@ public class BinaryCalculatorTest {
     @Test
     void testSquareThrowsExceptionOnOverflow() {
         Assertions.assertThrows(ArithmeticException.class,
-                () -> binaryCalculator.square(Long.toBinaryString(Long.MAX_VALUE/2))
+                () -> binaryCalculator.square(Long.toBinaryString(Long.MAX_VALUE / 2))
         );
     }
 
@@ -113,5 +112,60 @@ public class BinaryCalculatorTest {
         String expectedQuotient = Long.toBinaryString(3);
 
         Assertions.assertEquals(expectedQuotient, actualQuotient);
+    }
+
+    @Test
+    void testToggleSignNegativeToPositive() {
+        Assertions.assertEquals(
+                Long.toBinaryString(2),
+                binaryCalculator.toggleSign(Long.toBinaryString(-2))
+        );
+    }
+
+    @Test
+    void testToggleSignPositiveToNegative() {
+        Assertions.assertEquals(
+                Long.toBinaryString(-2),
+                binaryCalculator.toggleSign(Long.toBinaryString(2))
+        );
+    }
+
+    @Test
+    void testToggleSignThrowsOverflowException() {
+        Assertions.assertThrows(ArithmeticException.class, () -> {
+            binaryCalculator.toggleSign(Long.toBinaryString(Long.MIN_VALUE));
+        });
+    }
+
+    @Test
+    void testConvertToBinary() {
+        Assertions.assertEquals(
+                "100",
+                binaryCalculator.convertToBinary("4")
+        );
+    }
+
+    @Test
+    void testConvertToBinaryNegative() {
+        Assertions.assertEquals(
+                Long.toBinaryString(-12),
+                binaryCalculator.convertToBinary("-12")
+        );
+    }
+
+    @Test
+    void testConvertToDecimal() {
+        Assertions.assertEquals(
+                "4",
+                binaryCalculator.convertToDecimal("100")
+        );
+    }
+
+    @Test
+    void testConvertToDecimalNegative() {
+        Assertions.assertEquals(
+                "-12",
+                binaryCalculator.convertToDecimal(Long.toBinaryString(-12))
+        );
     }
 }

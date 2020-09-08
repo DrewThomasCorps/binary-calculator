@@ -63,20 +63,15 @@ public class BinaryCalculatorController {
     public void handleToggle() {
         String text = resultDisplay.getText();
         if (isBinary) {
-            long number = Long.parseUnsignedLong(text, 2);
-            resultDisplay.setText(Long.toString(number));
+            resultDisplay.setText(binaryCalculator.convertToDecimal(text));
         } else {
-            long number = Long.parseLong(text);
-            resultDisplay.setText(Long.toBinaryString(number));
+            resultDisplay.setText(binaryCalculator.convertToBinary(text));
         }
         isBinary = !isBinary;
     }
 
     public void handleSignToggle() {
-        long inputNumber = Long.parseUnsignedLong(resultDisplay.getText(),2);
-        inputNumber = Math.negateExact(inputNumber);
-        String outputNumber = Long.toBinaryString(inputNumber);
-        resultDisplay.setText(outputNumber);
+        resultDisplay.setText(binaryCalculator.toggleSign(resultDisplay.getText()));
     }
 
     public void handleClear() {

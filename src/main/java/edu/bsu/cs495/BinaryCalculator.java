@@ -65,8 +65,6 @@ public class BinaryCalculator {
         }
         secondNumber = new BigInteger(binary, 2).longValue();
         performCalculation();
-        operation = null;
-        secondNumber = null;
         return new StringBuilder(Long.toBinaryString(firstNumber));
     }
 
@@ -77,15 +75,19 @@ public class BinaryCalculator {
     }
 
     public String convertToDecimal(String binary) {
-        long number = new BigInteger(binary, 10).longValue();
-        String outnumber = Long.toString(number);
-        return outnumber ;
+        long number = Long.parseUnsignedLong(binary, 2);
+        return Long.toString(number);
     }
 
-    public String convertToBinary(String binary) {
-        BigInteger number = new BigInteger(binary, 2);
-        String outnumber = number.toString();
-        return outnumber;
+    public String convertToBinary(String decimal) {
+        long number = Long.parseLong(decimal);
+        return Long.toBinaryString(number);
+    }
+
+    public String toggleSign(String binary) {
+        long number = Long.parseUnsignedLong(binary,2);
+        long negatedNumber = Math.negateExact(number);
+        return Long.toBinaryString(negatedNumber);
     }
 
     private void performCalculation() {
