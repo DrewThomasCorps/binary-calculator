@@ -57,7 +57,7 @@ public class BinaryCalculatorController {
                 resultDisplay.setText(operator);
                 break;
             default:
-                setAlert();
+                setAlert("Invalid operator");
         }
     }
 
@@ -111,8 +111,8 @@ public class BinaryCalculatorController {
 
     }
 
-    public void setAlert() {
-
+    public void setAlert(String alertText) {
+        alertDisplay.setText(alertText);
     }
 
 }
