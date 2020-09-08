@@ -101,7 +101,11 @@ public class BinaryCalculatorController {
     public void handleSquareRoot() {
         stateReset();
 
-        resultDisplay.setText((binaryCalculator.squareRoot(resultDisplay.getText())).toString());
+        if (resultDisplay.getText().equals("")) {
+            setAlert("Operation not permitted: No input");
+        } else {
+            resultDisplay.setText((binaryCalculator.squareRoot(resultDisplay.getText())).toString());
+        }
     }
 
     public void handleSquare() {
