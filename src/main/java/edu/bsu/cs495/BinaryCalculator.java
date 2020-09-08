@@ -1,7 +1,5 @@
 package edu.bsu.cs495;
 
-import org.w3c.dom.ranges.RangeException;
-
 import java.math.BigInteger;
 
 public class BinaryCalculator {
@@ -58,13 +56,15 @@ public class BinaryCalculator {
 
     public StringBuilder calculate(String binary) {
         if (operation == null) {
-            throw new IllegalStateException("No operation was selected");
+            throw new IllegalStateException("No operation was selected.");
         }
         if (firstNumber == null) {
-            throw new IllegalStateException("The is not another number to operate with.");
+            throw new IllegalStateException("There is not another number to operate with.");
         }
         secondNumber = new BigInteger(binary, 2).longValue();
         performCalculation();
+        secondNumber = null;
+        operation = null;
         return new StringBuilder(Long.toBinaryString(firstNumber));
     }
 
