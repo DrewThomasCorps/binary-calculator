@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BinaryCalculatorController {
-    private Boolean isbinary = true;
+    private Boolean isBinary = true;
     private final BinaryCalculator binaryCalculator = new BinaryCalculator();
 
     @FXML
@@ -22,7 +22,6 @@ public class BinaryCalculatorController {
     private Label alertDisplay;
 
     public void handleDigit(ActionEvent event) {
-
         Pattern p = Pattern.compile("[+-/*]");
         Matcher m = p.matcher(resultDisplay.getText());
 
@@ -34,7 +33,6 @@ public class BinaryCalculatorController {
             String digitValue = ((Button)event.getSource()).getText();
             resultDisplay.setText(resultDisplay.getText() + digitValue);
         }
-
     }
 
     public void handleOperator(ActionEvent event) {
@@ -67,48 +65,38 @@ public class BinaryCalculatorController {
 
     public void handleToggle() {
         String text = resultDisplay.getText();
-        if (isbinary) {
+        if (isBinary) {
             long number = Long.parseUnsignedLong(text, 2);
             resultDisplay.setText(Long.toString(number));
         } else {
             long number = Long.parseLong(text);
             resultDisplay.setText(Long.toBinaryString(number));
         }
-        isbinary = !isbinary;
+        isBinary = !isBinary;
     }
 
     public void handleSignToggle() {
-        long Num = Long.parseUnsignedLong(resultDisplay.getText(),2);
-        Num = Num* -1;
-        String outNum = Long.toBinaryString(Num);
-        resultDisplay.setText(outNum);
-
-
+        long inputNumber = Long.parseUnsignedLong(resultDisplay.getText(),2);
+        inputNumber = inputNumber* -1;
+        String outputNumber = Long.toBinaryString(inputNumber);
+        resultDisplay.setText(outputNumber);
     }
 
     public void handleClear() {
-
         clearResultLabel();
         binaryCalculator.clear();
-
     }
 
     public void handleSquareRoot() {
-
         resultDisplay.setText((binaryCalculator.squareRoot(resultDisplay.getText())).toString());
-
     }
 
     public void handleSquare() {
-
         resultDisplay.setText((binaryCalculator.square(resultDisplay.getText())).toString());
-
     }
 
     public void clearResultLabel(){
-
         resultDisplay.setText("");
-
     }
 
     public void setAlert(String alertText) {
