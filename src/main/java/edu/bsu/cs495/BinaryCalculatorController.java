@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 
 public class BinaryCalculatorController {
     private Boolean isBinary = true;
+    private Boolean isResult = false;
     private final BinaryCalculator binaryCalculator = new BinaryCalculator();
 
     @FXML
@@ -24,8 +25,9 @@ public class BinaryCalculatorController {
         Pattern p = Pattern.compile("[+-/*]");
         Matcher m = p.matcher(resultDisplay.getText());
 
-        if (m.matches()) {
+        if (m.matches() || isResult) {
             clearResultLabel();
+            isResult = false;
         }
 
         if (resultDisplay.getText().length() < 64) {
@@ -74,6 +76,7 @@ public class BinaryCalculatorController {
 
         try {
             resultDisplay.setText(binaryCalculator.calculate(resultDisplay.getText()).toString());
+            isResult = true;
         } catch (ArithmeticException e) {
             setAlert("Operation not permitted: "+ e.getMessage());
         }
