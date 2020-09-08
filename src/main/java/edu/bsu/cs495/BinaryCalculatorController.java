@@ -78,7 +78,12 @@ public class BinaryCalculatorController {
     }
 
     public void handleSignToggle() {
-        resultDisplay.setText(binaryCalculator.toggleSign(resultDisplay.getText()));
+        try {
+            resultDisplay.setText(binaryCalculator.toggleSign(resultDisplay.getText()));
+        } catch (ArithmeticException e) {
+            setAlert("Operation not permitted: " + e.getMessage());
+        }
+
     }
 
     public void handleClear() {

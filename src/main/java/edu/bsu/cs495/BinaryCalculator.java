@@ -84,7 +84,7 @@ public class BinaryCalculator {
         return Long.toBinaryString(number);
     }
 
-    public String toggleSign(String binary) {
+    public String toggleSign(String binary) throws ArithmeticException {
         long number = Long.parseUnsignedLong(binary,2);
         long negatedNumber = Math.negateExact(number);
         return Long.toBinaryString(negatedNumber);
