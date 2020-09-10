@@ -9,8 +9,8 @@ Set up JAVA_HOME and install Maven Dependencies.
 To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run` 
 
 ## User Manual
-
-![Alt screenshot of Binary Calculator](binarycalcshot.png?raw=true BinaryCalculatorScreenShot)
+<strong>Binary Calculator</strong><br>
+![Alt screenshot of Binary Calculator](src/main/resources/binarycalcshot.png?raw=true BinaryCalculatorScreenShot)
 
 #### Number Buttons
 ##### Zero Button:  0
@@ -23,9 +23,22 @@ Use number buttons to enter binary values into the calculator.
 ##### Multiplication Button:  *
 ##### Division Button:  /
 Use the Two Number Operation buttons to perform arithmetic operations on two binary integers. Using the number buttons,
-a user enters the number '101'. Next the user presses a Two Number Operation button, for instance '+'. Finally the user 
+a user enters the number '101'. Next the user presses a Two Number Operation button, for instance '+'. Finally, the user 
 enters the second number '1011' and presses the '=' operator to perform addition. The result of the addition '10000' is
 displayed in the result label.
+
+<strong>Input First Number</strong><br>
+![Alt enter 101](src/main/resources/101.png?raw=true 101)<br>
+
+<strong>Choose Operation</strong><br>
+![Alt choose operation](src/main/resources/choose-operation.png?raw=true Choose Operation)<br>
+
+<strong>Input Second Number</strong><br>
+![Alt enter 1011](src/main/resources/1011.png?raw=true 1011)
+
+<strong>Click '=' Equals-Button</strong><br>
+![Alt click equals-button](src/main/resources/click-equal-button.png?raw=true click Equals-button)
+
 
 #### Single Number Operations
 
