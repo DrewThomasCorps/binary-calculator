@@ -23,8 +23,8 @@ Use number buttons to enter binary values into the calculator.
 ##### Multiplication Button:  *
 ##### Division Button:  /
 Use the Two Number Operation buttons to perform arithmetic operations on two binary integers. Using the number buttons,
-a user enters the number '101'. Next the user presses a Two Number Operation button, for instance '+'. Finally, the user 
-enters the second number '1011' and presses the '=' operator to perform addition. The result of the addition '10000' is
+a user enters the number for example '101'. Next the user presses a Two Number Operation button, for instance '+'. Then, the user 
+enters the second number for example '1011' and finally presses the '=' operator to perform addition. The result of the addition '10000' is
 displayed in the result label.
 
 <strong>Input First Number</strong><br>
