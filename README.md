@@ -98,7 +98,8 @@ Tests, Take Screenshots, Add Screenshots to README.md]
 [Levi Connelly] = [Implement Operator Handling in GUI controller, Add Logic to Clear Result Display, Implement Various
 Error Handling, Implement UX fixes for Usage after a Calculation]
 
-[Samuel Guernsey] = []
+[Samuel Guernsey] = [Implement Convert to Decimal in Controller and Model, Implement Binary Toggle in Controller, Work
+on User Manual in README.md]
 
 [Alan Bauer] = [Design GUI Mockup, Implement GUI in JavaFX, Configure GUI controller, Configure .fxml, Refactor UI for
 Additional Input, Prevent Overflow in Controller, Design Various Controller Methods, Create/Edit README.md User Manual]
