@@ -10,6 +10,8 @@ To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run`
 
 ## User Manual
 
+![Alt screenshot of Binary Calculator](binarycalcshot.png?raw=true BinaryCalculatorScreenShot)
+
 #### Number Buttons
 ##### Zero Button:  0
 ##### One Button:  1
@@ -28,9 +30,10 @@ displayed in the result label.
 #### Single Number Operations
 
 #### Sign Toggle
+Switch signs from positive to negative and vice versa.
 
 #### Decimal/Binary Toggle
-
+Translate a number from its binary representation to its corresponding decimal translation as well as vice versa.
 
 ## Meetings
 #### 09-05-2020 18:40–19:10
