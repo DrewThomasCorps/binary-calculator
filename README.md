@@ -92,11 +92,13 @@ Translate a number from its binary representation to its corresponding decimal t
 [Drew  Thomas] = [Create Github Repository, Add Team as Collaborators, Create Gitignore, Design Calculator Model/API,
 Implement Various API Methods, Implement Various Error Handling]
 
-[Nathan Malitz] = []
+[Nathan Malitz] = [Implement Various Operations in Model, Implement Thrown Exceptions in Model, Implement Various Unit
+Tests, Take Screenshots, Add Screenshots to README.md]
 
-[Levi Connelly] = []
+[Levi Connelly] = [Implement Operator Handling in GUI controller, Add Logic to Clear Result Display, Implement Various
+Error Handling, Implement UX fixes for Usage after a Calculation]
 
 [Samuel Guernsey] = []
 
 [Alan Bauer] = [Design GUI Mockup, Implement GUI in JavaFX, Configure GUI controller, Configure .fxml, Refactor UI for
-Additional Input, Prevent Overflow in Controller, Design Various Controller Methods]
+Additional Input, Prevent Overflow in Controller, Design Various Controller Methods, Create/Edit README.md User Manual]
