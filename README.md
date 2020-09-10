@@ -88,3 +88,15 @@ Translate a number from its binary representation to its corresponding decimal t
   
   Attendees: Drew, Levi
   
+##Task Distribution
+[Drew  Thomas] = [Create Github Repository, Add Team as Collaborators, Create Gitignore, Design Calculator Model/API,
+Implement Various API Methods, Implement Various Error Handling]
+
+[Nathan Malitz] = []
+
+[Levi Connelly] = []
+
+[Samuel Guernsey] = []
+
+[Alan Bauer] = [Design GUI Mockup, Implement GUI in JavaFX, Configure GUI controller, Configure .fxml, Refactor UI for
+Additional Input, Prevent Overflow in Controller, Design Various Controller Methods]
