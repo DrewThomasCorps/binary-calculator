@@ -16,7 +16,7 @@ To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run`
 
 ## User Manual
 <strong>Binary Calculator</strong><br>
-![Alt screenshot of Binary Calculator](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/binarycalcshot.png?raw=true)
+![Alt screenshot of Binary Calculator](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/binarycalcshot.png?raw=true)
 
 #### Number Buttons
 ##### Zero Button:  0
