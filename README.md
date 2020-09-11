@@ -103,7 +103,8 @@ Translate a number from its binary representation to its corresponding decimal t
   
 ##Task Distribution
 [Drew  Thomas] = [Create Github Repository, Add Team as Collaborators, Create Gitignore, Design Calculator Model/API,
-Implement Various API Methods, Implement Various Error Handling, Refactor Twos Complement to Base Two]
+Implement Various API Methods, Implement Various Error Handling, Switch to base 2 representation from two's complement,
+Unit Tests for any added API Methods]
 
 [Nathan Malitz] = [Implement Various Operations in Model, Implement Thrown Exceptions in Model, Implement Various Unit
 Tests, Take Screenshots, Add Screenshots to README.md, Contribute Single Number Operations Descriptions to README.md ]
