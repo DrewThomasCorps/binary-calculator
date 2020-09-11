@@ -4,7 +4,13 @@
 ## Installation
 ```git clone https://github.com/DrewThomasCorps/binary-calculator.git```
 
-Set up JAVA_HOME and install Maven Dependencies.
+Set up JAVA_HOME
+
+Windows users should add %JAVA_HOME%\bin to Path environment variable
+
+Install Maven Dependencies.
+
+
 
 To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run` 
 
@@ -86,7 +92,14 @@ Translate a number from its binary representation to its corresponding decimal t
   
   Discussion: How is the functionality implemented, and how should it be handled in the controller.
   
-  Attendees: Drew, Levi
+  Attendees: Drew, Levi 
+
+#### 09-10-2020 20:00-20:10
+  Medium: Phone Call / Slack Chat
+  
+  Discussion: Quick discussion on solutions to implement base two negatives vs. two's complement.
+  
+  Attendees: Drew, Alan
   
 ##Task Distribution
 [Drew  Thomas] = [Create Github Repository, Add Team as Collaborators, Create Gitignore, Design Calculator Model/API,
