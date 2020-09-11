@@ -16,7 +16,7 @@ To run the project select `Maven` -> `Plugins` -> `javafx` -> `javafx:run`
 
 ## User Manual
 <strong>Binary Calculator</strong><br>
-![Alt screenshot of Binary Calculator](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/binarycalcshot.png?raw=true BinaryCalculatorScreenShot)
+![Alt screenshot of Binary Calculator](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/binarycalcshot.png?raw=true)
 
 #### Number Buttons
 ##### Zero Button:  0
@@ -34,16 +34,16 @@ enters the second number for example '1011' and finally presses the '=' operator
 displayed in the result label.
 
 <strong>Input First Number</strong><br>
-![Alt enter 101](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/101.png?raw=true 101)<br>
+![Alt enter 101](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/101.png?raw=true)<br>
 
 <strong>Choose Operation</strong><br>
 ![Alt choose operation](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/choose-operation.png?raw=true Choose Operation)<br>
 
 <strong>Input Second Number</strong><br>
-![Alt enter 1011](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/1011.png?raw=true 1011)
+![Alt enter 1011](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/1011.png?raw=true)
 
 <strong>Click '=' Equals-Button</strong><br>
-![Alt click equals-button](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/click-equal-button.png?raw=true click Equals-button)
+![Alt click equals-button](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/click-equal-button.png?raw=true)
 
 
 #### Single Number Operations
