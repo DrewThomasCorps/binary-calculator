@@ -5,11 +5,11 @@ import java.math.BigInteger;
 public class Number {
     private final Long value;
 
-    public Number (String binary){
+    public Number(String binary) {
         value = new BigInteger(binary, 2).longValue();
     }
 
-    public Number (long decimal) {
+    public Number(long decimal) {
         value = decimal;
     }
 

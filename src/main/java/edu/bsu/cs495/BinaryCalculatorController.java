@@ -2,8 +2,8 @@ package edu.bsu.cs495;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,7 +32,7 @@ public class BinaryCalculatorController {
 
         // Must be less than 63 bits to prevent overflow when adding a minus sign
         if (resultDisplay.getText().length() < 63) {
-            String digitValue = ((Button)event.getSource()).getText();
+            String digitValue = ((Button) event.getSource()).getText();
             resultDisplay.setText(resultDisplay.getText() + digitValue);
         }
     }
@@ -45,7 +45,7 @@ public class BinaryCalculatorController {
             return;
         }
 
-        String operator = ((Button)event.getSource()).getText();
+        String operator = ((Button) event.getSource()).getText();
 
         switch (operator) {
             case "+":
@@ -79,8 +79,9 @@ public class BinaryCalculatorController {
             resultDisplay.setText(binaryCalculator.calculate(resultDisplay.getText()).toString());
             isResult = true;
         } catch (ArithmeticException e) {
-            setAlert("Operation not permitted: "+ e.getMessage());
-        } catch (Exception ignored) { }
+            setAlert("Operation not permitted: " + e.getMessage());
+        } catch (Exception ignored) {
+        }
 
     }
 
@@ -154,7 +155,7 @@ public class BinaryCalculatorController {
 
     }
 
-    public void clearResultLabel(){
+    public void clearResultLabel() {
         resultDisplay.setText("");
     }
 
