@@ -34,16 +34,16 @@ enters the second number for example '1011' and finally presses the '=' operator
 displayed in the result label.
 
 <strong>Input First Number</strong><br>
-![Alt enter 101](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/101.png?raw=true)<br>
+![Alt enter 101](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/101.png?raw=true)<br>
 
 <strong>Choose Operation</strong><br>
-![Alt choose operation](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/choose-operation.png?raw=true Choose Operation)<br>
+![Alt choose operation](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/choose-operation.png?raw=true)<br>
 
 <strong>Input Second Number</strong><br>
-![Alt enter 1011](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/1011.png?raw=true)
+![Alt enter 1011](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/1011.png?raw=true)
 
 <strong>Click '=' Equals-Button</strong><br>
-![Alt click equals-button](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/src/main/resources/click-equal-button.png?raw=true)
+![Alt click equals-button](https://github.com/DrewThomasCorps/binary-calculator/blob/master/src/main/resources/click-equal-button.png?raw=true)
 
 
 #### Single Number Operations
