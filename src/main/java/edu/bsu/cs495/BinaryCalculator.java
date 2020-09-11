@@ -1,11 +1,9 @@
 package edu.bsu.cs495;
 
-import java.math.BigInteger;
-
 public class BinaryCalculator {
 
-    private Long firstNumber;
-    private Long secondNumber;
+    private Number firstNumber;
+    private Number secondNumber;
     private TwoNumberOperations operation;
 
     private enum TwoNumberOperations {
@@ -19,38 +17,41 @@ public class BinaryCalculator {
         if (binary == null || binary.equals("")) {
             return new StringBuilder();
         }
-        firstNumber = new BigInteger(binary, 2).longValue();
-        double squaredValue = Math.pow(firstNumber, 2);
+        firstNumber = new Number(binary);
+        double squaredValue = Math.pow(firstNumber.getValue(), 2);
         if (squaredValue > Long.MAX_VALUE) {
             throw new ArithmeticException("Long overflow");
         }
-        firstNumber = (long) squaredValue;
-        return new StringBuilder(Long.toBinaryString(firstNumber));
+        firstNumber = new Number((long) squaredValue);
+        return new StringBuilder(firstNumber.toBinaryString());
     }
 
     public StringBuilder squareRoot(String binary) {
-        firstNumber = new BigInteger(binary, 2).longValue();
-        firstNumber = (long) Math.sqrt((double) firstNumber);
-        return new StringBuilder(Long.toBinaryString(firstNumber));
+        firstNumber = new Number(binary);
+        if (firstNumber.getValue() < 0) {
+            throw new ArithmeticException("Cannot take the square root of a negative");
+        }
+        firstNumber = new Number((long) Math.sqrt(firstNumber.getValue()));
+        return new StringBuilder(firstNumber.toBinaryString());
     }
 
     public void add(String binary) {
-        firstNumber = new BigInteger(binary, 2).longValue();
+        firstNumber = new Number(binary);
         operation = TwoNumberOperations.ADD;
     }
 
     public void subtract(String binary) {
-        firstNumber = new BigInteger(binary, 2).longValue();
+        firstNumber = new Number(binary);
         operation = TwoNumberOperations.SUBTRACT;
     }
 
     public void multiply(String binary) {
-        firstNumber = new BigInteger(binary, 2).longValue();
+        firstNumber = new Number(binary);
         operation = TwoNumberOperations.MULTIPLY;
     }
 
     public void divide(String binary) {
-        firstNumber = new BigInteger(binary, 2).longValue();
+        firstNumber = new Number(binary);
         operation = TwoNumberOperations.DIVIDE;
     }
 
@@ -61,11 +62,11 @@ public class BinaryCalculator {
         if (firstNumber == null) {
             throw new IllegalStateException("There is not another number to operate with.");
         }
-        secondNumber = new BigInteger(binary, 2).longValue();
+        secondNumber = new Number(binary);
         performCalculation();
         secondNumber = null;
         operation = null;
-        return new StringBuilder(Long.toBinaryString(firstNumber));
+        return new StringBuilder(firstNumber.toBinaryString());
     }
 
     public void clear() {
@@ -75,19 +76,18 @@ public class BinaryCalculator {
     }
 
     public String convertToDecimal(String binary) {
-        long number = Long.parseUnsignedLong(binary, 2);
-        return Long.toString(number);
+        return new Number(binary).toDecimalString();
     }
 
     public String convertToBinary(String decimal) {
         long number = Long.parseLong(decimal);
-        return Long.toBinaryString(number);
+        return new Number(number).toBinaryString();
     }
 
     public String toggleSign(String binary) throws ArithmeticException {
-        long number = Long.parseUnsignedLong(binary,2);
-        long negatedNumber = Math.negateExact(number);
-        return Long.toBinaryString(negatedNumber);
+        Number number = new Number(binary);
+        Number negatedNumber = new Number(Math.negateExact(number.getValue()));
+        return negatedNumber.toBinaryString();
     }
 
     private void performCalculation() {
@@ -108,19 +108,27 @@ public class BinaryCalculator {
     }
 
     private void calculateAddition() throws ArithmeticException {
-        firstNumber = Math.addExact(firstNumber, secondNumber);
+        firstNumber = new Number(
+                Math.addExact(firstNumber.getValue(), secondNumber.getValue())
+        );
     }
 
     private void calculateSubtraction() throws ArithmeticException {
-        firstNumber = Math.subtractExact(firstNumber, secondNumber);
+        firstNumber = new Number(
+                Math.subtractExact(firstNumber.getValue(), secondNumber.getValue())
+        );
     }
 
     private void calculateDivision() {
-        firstNumber /= secondNumber;
+        firstNumber = new Number(
+                firstNumber.getValue() / secondNumber.getValue()
+        );
     }
 
     private void calculateMultiplication() throws ArithmeticException {
-        firstNumber = Math.multiplyExact(firstNumber, secondNumber);
+        firstNumber = new Number(
+                Math.multiplyExact(firstNumber.getValue(), secondNumber.getValue())
+        );
     }
 
 

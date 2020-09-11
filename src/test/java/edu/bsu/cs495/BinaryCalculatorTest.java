@@ -25,7 +25,7 @@ public class BinaryCalculatorTest {
     void testSquareHandlesNegatives() {
         Assertions.assertEquals(
                 Long.toBinaryString(25),
-                binaryCalculator.square(Long.toBinaryString(-5)).toString()
+                binaryCalculator.square("-" + Long.toBinaryString(5)).toString()
         );
     }
 
@@ -43,6 +43,11 @@ public class BinaryCalculatorTest {
                 Long.toBinaryString(4),
                 binaryCalculator.squareRoot(Long.toBinaryString(18)).toString()
         );
+    }
+
+    @Test
+    void testSquareRootOfNegative() {
+        Assertions.assertThrows(ArithmeticException.class, () -> binaryCalculator.squareRoot("-10"));
     }
 
     @Test
@@ -66,9 +71,9 @@ public class BinaryCalculatorTest {
 
     @Test
     void testCalculateAdditionWithNegatives() {
-        binaryCalculator.add(Long.toBinaryString(-3));
-        String actualSum = binaryCalculator.calculate(Long.toBinaryString(2)).toString();
-        String expectedSum = Long.toBinaryString(-1);
+        binaryCalculator.add("-11");
+        String actualSum = binaryCalculator.calculate("10").toString();
+        String expectedSum = "-1";
         Assertions.assertEquals(expectedSum, actualSum);
     }
 
@@ -117,16 +122,16 @@ public class BinaryCalculatorTest {
     @Test
     void testToggleSignNegativeToPositive() {
         Assertions.assertEquals(
-                Long.toBinaryString(2),
-                binaryCalculator.toggleSign(Long.toBinaryString(-2))
+                "10",
+                binaryCalculator.toggleSign("-10")
         );
     }
 
     @Test
     void testToggleSignPositiveToNegative() {
         Assertions.assertEquals(
-                Long.toBinaryString(-2),
-                binaryCalculator.toggleSign(Long.toBinaryString(2))
+                "-10",
+                binaryCalculator.toggleSign("10")
         );
     }
 
@@ -148,7 +153,7 @@ public class BinaryCalculatorTest {
     @Test
     void testConvertToBinaryNegative() {
         Assertions.assertEquals(
-                Long.toBinaryString(-12),
+                "-1100",
                 binaryCalculator.convertToBinary("-12")
         );
     }
@@ -165,7 +170,7 @@ public class BinaryCalculatorTest {
     void testConvertToDecimalNegative() {
         Assertions.assertEquals(
                 "-12",
-                binaryCalculator.convertToDecimal(Long.toBinaryString(-12))
+                binaryCalculator.convertToDecimal("-1100")
         );
     }
 }

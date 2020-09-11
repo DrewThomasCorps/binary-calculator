@@ -30,7 +30,8 @@ public class BinaryCalculatorController {
             isResult = false;
         }
 
-        if (resultDisplay.getText().length() < 64) {
+        // Must be less than 63 bits to prevent overflow when adding a minus sign
+        if (resultDisplay.getText().length() < 63) {
             String digitValue = ((Button)event.getSource()).getText();
             resultDisplay.setText(resultDisplay.getText() + digitValue);
         }
@@ -127,9 +128,14 @@ public class BinaryCalculatorController {
 
         if (isEmpty()) {
             setAlert("Operation not permitted: No input");
-        } else {
-            resultDisplay.setText((binaryCalculator.squareRoot(resultDisplay.getText())).toString());
+            return;
         }
+        try {
+            resultDisplay.setText((binaryCalculator.squareRoot(resultDisplay.getText())).toString());
+        } catch (ArithmeticException e) {
+            setAlert("Operation not permitted: " + e.getMessage());
+        }
+
     }
 
     public void handleSquare() {
